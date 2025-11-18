@@ -4,136 +4,116 @@
   <meta charset="UTF-8" />
   <title>Nicolas Romanella</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-    body { background: #0f172a; color: #e5e7eb; line-height: 1.6; }
-    a { color: #38bdf8; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header { padding: 3rem 1.5rem; max-width: 900px; margin: 0 auto; }
-    .tag { display: inline-block; padding: 0.25rem 0.6rem; border-radius: 999px; border: 1px solid #38bdf8; font-size: 0.8rem; margin-bottom: 1rem; }
-    h1 { font-size: 2.3rem; margin-bottom: 0.75rem; }
-    h2 { font-size: 1.4rem; margin: 2.5rem 0 0.8rem; border-bottom: 1px solid #1f2937; padding-bottom: 0.3rem; }
-    p.lead { max-width: 650px; font-size: 1rem; color: #cbd5f5; }
-    main { padding: 0 1.5rem 3rem; max-width: 900px; margin: 0 auto; }
-    .grid { display: grid; gap: 1.5rem; }
-    @media (min-width: 768px) {
-      .grid-2 { grid-template-columns: 1.2fr 1fr; }
-      h1 { font-size: 2.7rem; }
-    }
-    .card { border-radius: 0.75rem; border: 1px solid #1f2937; padding: 1.2rem 1.3rem; background: rgba(15,23,42,0.75); }
-    .card h3 { margin-bottom: 0.4rem; font-size: 1.05rem; }
-    .badge-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
-    .badge { font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 999px; background: #020617; border: 1px solid #1f2937; }
-    ul { list-style: disc; margin-left: 1.2rem; margin-top: 0.4rem; }
-    footer { border-top: 1px solid #1f2937; padding: 1.5rem; text-align: center; font-size: 0.8rem; color: #9ca3af; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <div class="tag">MSc Automotive Engineering</div>
-    <h1>Hi, I'm Nicolas Romanella.</h1>
-    <p class="lead">
-      Mechanical Engineer specialized in Automotive Engineering, with a focus on vehicle dynamics,
-      multibody simulation and control. I build and validate physics-based models to understand and
-      improve the behaviour of complex dynamic systems.
-    </p>
+
+  <!-- NAVBAR -->
+  <div class="nav-wrap">
+    <nav>
+      <div class="nav-left">MSc Automotive Engineering</div>
+      <div class="nav-links">
+        <a href="#top" class="active">Home</a>
+        <a href="#projects">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+  <div class="nav-spacer" id="top"></div>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm Nicolas Romanella</h1>
+      <p class="hero-subtitle">
+        Mechanical Engineer specialized in Automotive Engineering, focusing on vehicle dynamics,
+        multibody simulation and control. I build and validate physics-based models to understand
+        and improve the behaviour of complex dynamic systems.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View portfolio</a>
+        <a href="#contact" class="btn btn-outline">Get in touch</a>
+      </div>
+    </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
-    <section class="grid grid-2">
-      <div>
-        <h2>About</h2>
-        <p>
-          I'm a Master's student in Vehicle Engineering based in Italy, currently working on
-          simulation and modeling for an electric racing motorcycle team. I enjoy turning
-          equations and models into tools that can support design decisions and performance
-          improvements.
-        </p>
-        <p style="margin-top:0.6rem;">
-          I'm particularly interested in roles involving vehicle dynamics, model-based
-          development, control, and multibody simulation – in automotive, motorsport, and
-          advanced mechanical systems.
-        </p>
-      </div>
-      <div>
-        <h2>Skills</h2>
-        <div class="badge-row">
-          <span class="badge">MATLAB / Simulink</span>
-          <span class="badge">VI-Grade (VI-Bike, VI-Road)</span>
-          <span class="badge">Multibody dynamics</span>
-          <span class="badge">Control systems</span>
-          <span class="badge">Data analysis</span>
-          <span class="badge">Python (basic)</span>
-          <span class="badge">C++ (learning)</span>
-        </div>
-      </div>
-    </section>
 
-    <section>
+    <!-- PROJECTS -->
+    <section id="projects">
       <h2>Selected Projects</h2>
 
       <div class="card">
-        <h3>Electric racing motorcycle – vehicle dynamics & simulation</h3>
+        <h3>Project: Modeling and Simulation of a MotoGP Holeshot Device Hydraulic System</h3>
         <p>
-          Developed and validated dynamic models of an electric prototype for an international MotoStudent competition,
-          using VI-Grade and MATLAB for simulation and data analysis.
+          <strong>Context:</strong> MSc project in Vehicle Engineering · Università degli Studi di Modena e Reggio Emilia · Oct 2024 – Dec 2024
         </p>
         <ul>
-          <li>Built lap-time and handling simulations to support setup decisions and performance evaluation.</li>
-          <li>Compared simulation outputs with track data to refine model parameters and assumptions.</li>
+          <li>Developed a hydraulic model of a MotoGP holeshot device to study its dynamic behaviour during launch.</li>
+          <li>Simulated system response under different operating conditions to analyse pressure build-up and actuation timing.</li>
+          <li>Evaluated design parameters to support future optimisation of performance and reliability.</li>
         </ul>
-        <div class="badge-row">
-          <span class="badge">VI-Grade</span>
-          <span class="badge">MATLAB</span>
-          <span class="badge">Vehicle dynamics</span>
-        </div>
       </div>
 
       <div class="card">
-        <h3>Control & state-space modeling coursework</h3>
+        <h3>Project: Study and Optimization of Energy Consumption for a Formula SAE Car</h3>
         <p>
-          Implemented state-space models and controllers for mechanical systems as part of advanced control and vehicle
-          dynamics courses.
+          <strong>Context:</strong> Bachelor’s thesis project · Università di Pisa · Sep 2023 – Nov 2023
         </p>
         <ul>
-          <li>Designed and simulated feedback controllers for stability and tracking tasks.</li>
-          <li>Used numerical tools to analyse eigenvalues, step responses, and frequency behaviour.</li>
+          <li>Analysed powertrain and vehicle data to characterise energy consumption over different driving conditions.</li>
+          <li>Built a simplified vehicle model to evaluate the impact of driving strategy and setup on total energy usage.</li>
+          <li>Identified potential optimisation areas to extend endurance and improve overall efficiency.</li>
         </ul>
-        <div class="badge-row">
-          <span class="badge">Control theory</span>
-          <span class="badge">State-space</span>
-          <span class="badge">Simulation</span>
-        </div>
       </div>
 
       <div class="card">
-        <h3>Other projects & coursework</h3>
+        <h3>Project: CAD Redesign of a 2-Stroke Engine for Model Aircraft</h3>
         <p>
-          A selection of smaller projects in applied mechanics, modeling and simulation. Full reports and code available on request.
+          <strong>Context:</strong> Mechanical design project · Università di Pisa · Apr 2023 – Jun 2023
         </p>
         <ul>
-          <li>Assignments on multibody dynamics and numerical methods.</li>
-          <li>Vehicle mechanics, chassis, and aerodynamics coursework projects.</li>
+          <li>Redesigned a 2-stroke engine in CAD with a focus on manufacturability and functional improvements.</li>
+          <li>Reviewed component geometry and assembly to simplify machining and reduce potential failure points.</li>
+          <li>Prepared technical drawings suitable for prototype manufacturing.</li>
         </ul>
       </div>
+
+      <div class="card">
+        <h3>Project: Manufacturing Process Design of a Wankel Engine</h3>
+        <p>
+          <strong>Context:</strong> Manufacturing engineering project · Università di Pisa · May 2020 – Jul 2020
+        </p>
+        <ul>
+          <li>Defined process steps and operations for the production of key Wankel engine components.</li>
+          <li>Selected suitable machining processes and tooling considering tolerances and surface finish requirements.</li>
+          <li>Outlined a basic process plan balancing quality, feasibility and production cost.</li>
+        </ul>
+      </div>
+
     </section>
 
-    <section>
+    <!-- CONTACT -->
+    <section id="contact">
       <h2>Contact</h2>
-      <p>
-        📧 Email: <a href="mailto:nicolasromanella1@gmail.com">nicolasromanella1@gmail.com</a><br />
-        🔗 LinkedIn: <a href="https://www.linkedin.com/in/nicolas-romanella/" target="_blank">https://www.linkedin.com/in/nicolas-romanella/</a><br />
-        📄 Resume: <a href="nicolas_romanella_resume.pdf" target="_blank">Download</a>
-      </p>
+      <div class="contact-links">
+        <p>📧 Email: <a href="mailto:nicolasromanella1@gmail.com">nicolasromanella1@gmail.com</a></p>
+        <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/nicolas-romanella/" target="_blank">linkedin.com/in/nicolas-romanella</a></p>
+        <p>📄 Resume: <a href="nicolas_romanella_resume.pdf" target="_blank">Download PDF</a></p>
+      </div>
     </section>
+
   </main>
 
   <footer>
-    © <span id="year"></span> Nicolas Romanella
+    © <span id="year"></span> Nicolas Romanella · Built with plain HTML & CSS
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
