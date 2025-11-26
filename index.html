@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <title>Nicolas Romanella</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,8 +17,6 @@
       <div class="nav-left">MSc Automotive Engineering</div>
       <div class="nav-links">
         <a href="#top" class="active">Home</a>
-        <a href="#projects">Portfolio</a>
-        <a href="#contact">Contact</a>
       </div>
     </nav>
   </div>
@@ -25,7 +25,7 @@
   <!-- HERO SECTION -->
   <header class="hero">
     <div class="hero-content">
-      <h1>Hi, I'm Nicolas Romanella</h1>
+      <h1>Nicolas Romanella</h1>
       <p class="hero-subtitle">
         Mechanical Engineer specialized in Automotive Engineering, focusing on vehicle dynamics,
         multibody simulation and control. I build and validate physics-based models to understand
@@ -39,76 +39,164 @@
   </header>
 
   <!-- MAIN CONTENT -->
-  <main>
+	<main>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Selected Projects</h2>
+	  <!-- PROJECTS: Impulse Modena Racing -->
+	  <section id="projects">
+		<h2>Impulse Modena Racing</h2>
 
-      <div class="card">
-        <h3>Project: Modeling and Simulation of a MotoGP Holeshot Device Hydraulic System</h3>
-        <p>
-          <strong>Context:</strong> MSc project in Vehicle Engineering · Università degli Studi di Modena e Reggio Emilia · Oct 2024 – Dec 2024
-        </p>
-        <ul>
-          <li>Developed a hydraulic model of a MotoGP holeshot device to study its dynamic behaviour during launch.</li>
-          <li>Simulated system response under different operating conditions to analyse pressure build-up and actuation timing.</li>
-          <li>Evaluated design parameters to support future optimisation of performance and reliability.</li>
-        </ul>
-      </div>
+		<div class="timeline">
 
-      <div class="card">
-        <h3>Project: Study and Optimization of Energy Consumption for a Formula SAE Car</h3>
-        <p>
-          <strong>Context:</strong> Bachelor’s thesis project · Università di Pisa · Sep 2023 – Nov 2023
-        </p>
-        <ul>
-          <li>Analysed powertrain and vehicle data to characterise energy consumption over different driving conditions.</li>
-          <li>Built a simplified vehicle model to evaluate the impact of driving strategy and setup on total energy usage.</li>
-          <li>Identified potential optimisation areas to extend endurance and improve overall efficiency.</li>
-        </ul>
-      </div>
+		  <!-- PROJECT: Telemetry & Track -->
+		  <article class="timeline-item">
+			<div class="timeline-col">
+			  <span class="timeline-date">12/2025<br>11/2024</span>
+			  <div class="timeline-dot"></div>
+			</div>
 
-      <div class="card">
-        <h3>Project: CAD Redesign of a 2-Stroke Engine for Model Aircraft</h3>
-        <p>
-          <strong>Context:</strong> Mechanical design project · Università di Pisa · Apr 2023 – Jun 2023
-        </p>
-        <ul>
-          <li>Redesigned a 2-stroke engine in CAD with a focus on manufacturability and functional improvements.</li>
-          <li>Reviewed component geometry and assembly to simplify machining and reduce potential failure points.</li>
-          <li>Prepared technical drawings suitable for prototype manufacturing.</li>
-        </ul>
-      </div>
+			<div class="timeline-card">
+			  <a href="telemetry.html" class="project-image">
+				<img src="images/telemetry_front_2.jpg" alt="Telemetry &amp; Track Modeling">
+			  </a>
 
-      <div class="card">
-        <h3>Project: Manufacturing Process Design of a Wankel Engine</h3>
-        <p>
-          <strong>Context:</strong> Manufacturing engineering project · Università di Pisa · May 2020 – Jul 2020
-        </p>
-        <ul>
-          <li>Defined process steps and operations for the production of key Wankel engine components.</li>
-          <li>Selected suitable machining processes and tooling considering tolerances and surface finish requirements.</li>
-          <li>Outlined a basic process plan balancing quality, feasibility and production cost.</li>
-        </ul>
-      </div>
+			  <div class="project-content">
+				<h3>Track, Suspension & Handling Validation</h3>
 
-    </section>
+				<p class="project-meta">
+				  Vehicle Dynamics Engineer · Head of Simulation &amp; Modeling
+				</p>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-links">
-        <p>📧 Email: <a href="mailto:nicolasromanella1@gmail.com">nicolasromanella1@gmail.com</a></p>
-        <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/nicolas-romanella/" target="_blank">linkedin.com/in/nicolas-romanella</a></p>
-        <p>📄 Resume: <a href="nicolas_romanella_resume.pdf" target="_blank">Download PDF</a></p>
-      </div>
-    </section>
+				<p class="project-desc">
+				  Telemetry-based modeling of track, suspension, and handling dynamics to support
+				  setup decisions and performance analysis.
+				</p>
 
-  </main>
+				<p class="project-readmore">
+				  <a href="telemetry.html" class="read-more">Read More →</a>
+				</p>
+			  </div>
+			</div>
+		  </article>
+
+		  <!-- PROJECT: Steering Damper -->
+		  <article class="timeline-item">
+			<div class="timeline-col">
+			  <span class="timeline-date">10/2024<br>07/2024</span>
+			  <div class="timeline-dot"></div>
+			</div>
+
+			<div class="timeline-card">
+			  <a href="damper.html" class="project-image">
+				<img src="images/page2.png" alt="Motorcycle Steering Damper System">
+			  </a>
+
+			  <div class="project-content">
+				<h3>Motorcycle Steering Damper System</h3>
+
+				<p class="project-meta">
+				  Vehicle Dynamics Engineer · Simulation &amp; Modeling
+				</p>
+
+				<p class="project-desc">
+				  Modeling, simulating, and integrating a motorcycle steering damper to evaluate stability,
+				  packaging constraints, and on-track performance.
+				</p>
+
+				<p class="project-readmore">
+				  <a href="telemetry.html" class="read-more">Read More →</a>
+				</p>
+			  </div>
+			</div>
+		  </article>
+
+		  <!-- PROJECT: VI-Grade Model -->
+		  <article class="timeline-item">
+			<div class="timeline-col">
+			  <span class="timeline-date">06/2024<br>11/2023</span>
+			  <div class="timeline-dot"></div>
+			</div>
+
+			<div class="timeline-card">
+			  <a href="vigrade.html" class="project-image">
+				<img src="images/vigrade_front_2.jpg" alt="VI-Grade Motorcycle Model">
+			  </a>
+
+			  <div class="project-content">
+				<h3>Whole Motorcycle Dynamic Model</h3>
+
+				<p class="project-meta">
+				  Vehicle Dynamics Engineer · Simulation &amp; Modeling
+				</p>
+
+				<p class="project-desc">
+				  Development and validation of a motorcycle VI-Grade model using track data
+				  to assess handling and performance across setups and conditions.
+				</p>
+
+				<p class="project-readmore">
+				  <a href="telemetry.html" class="read-more">Read More →</a>
+				</p>
+			  </div>
+			</div>
+		  </article>
+
+		</div>
+	  </section>
+
+	  <!-- PROJECTS: Master of Science -->
+	  <section id="msc-projects">
+		<h2>MSc Automotive Engineering</h2>
+
+		<div class="timeline">
+
+		  <!-- PROJECT: Holeshot -->
+		  <article class="timeline-item">
+			<div class="timeline-col">
+			  <span class="timeline-date">12/2024<br>10/2024</span>
+			  <div class="timeline-dot"></div>
+			</div>
+
+			<div class="timeline-card">
+			  <a href="holeshot.html" class="project-image">
+				<img src="images/holeshot_front_2.jpg" alt="MotoGP Holeshot Device">
+			  </a>
+
+			  <div class="project-content">
+				<h3>MotoGP Holeshot Device</h3>
+
+				<p class="project-meta">
+				  Academic Project · Automotive Fluid Power Systems
+				</p>
+
+				<p class="project-desc">
+				  Dynamic modeling and simulation of a complete MotoGP holeshot hydraulic system,
+				  from geometry to performance evaluation under launch and braking loads.
+				</p>
+
+				<p class="project-readmore">
+				  <a href="telemetry.html" class="read-more">Read More →</a>
+				</p>
+			  </div>
+			</div>
+		  </article>
+
+		</div>
+	  </section>
+
+	  <!-- CONTACT -->
+	  <section id="contact">
+		<h2>Contact</h2>
+		<div class="contact-links">
+		  <p>📧 Email: <a href="mailto:nicolasromanella1@gmail.com">nicolasromanella1@gmail.com</a></p>
+		  <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/nicolas-romanella/" target="_blank">linkedin.com/in/nicolas-romanella</a></p>
+		  <p>📄 Resume: <a href="nicolas_romanella_resume.pdf" target="_blank">Download PDF</a></p>
+		</div>
+	  </section>
+
+	</main>
 
   <footer>
-    © <span id="year"></span> Nicolas Romanella · Built with plain HTML & CSS
+    © <span id="year"></span> Nicolas Romanella · Built with plain HTML &amp; CSS
   </footer>
 
   <script>

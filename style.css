@@ -1,4 +1,6 @@
-/* RESET + BASE */
+/* -------------------------------------------------
+   RESET & BASE
+------------------------------------------------- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,13 +9,13 @@
 }
 
 body {
-  background: #020617;
-  color: #e5e7eb;
+  background: #020617;         /* deep navy */
+  color: #e5e7eb;              /* light gray text */
   line-height: 1.6;
 }
 
 a {
-  color: #38bdf8;
+  color: #38bdf8;              /* cyan */
   text-decoration: none;
 }
 
@@ -21,13 +23,14 @@ a:hover {
   text-decoration: underline;
 }
 
-/* NAVBAR */
+/* -------------------------------------------------
+   NAVBAR
+------------------------------------------------- */
 .nav-wrap {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 20;
+
   background: rgba(2, 6, 23, 0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #1f2937;
@@ -37,6 +40,7 @@ nav {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0.8rem 1.5rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,32 +65,33 @@ nav {
   border-bottom: 2px solid transparent;
 }
 
-.nav-links a:hover {
-  opacity: 1;
-  border-bottom-color: #38bdf8;
-}
-
+.nav-links a:hover,
 .nav-links a.active {
   opacity: 1;
   border-bottom-color: #38bdf8;
 }
 
 .nav-spacer {
-  height: 56px;
+  height: 56px;  /* same as navbar height */
 }
 
-/* HERO */
+/* -------------------------------------------------
+   HERO
+------------------------------------------------- */
 .hero {
   position: relative;
   height: 70vh;
   min-height: 420px;
-  background-image: url("aragon_2.jpg");
+
+  background-image: url("images/aragon.jpg");
   background-size: cover;
   background-position: center;
+
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
   padding: 0 1.5rem;
 }
 
@@ -94,8 +99,10 @@ nav {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top, rgba(15,23,42,0.2), rgba(15,23,42,0.85)),
-              linear-gradient(to bottom, rgba(15,23,42,0.8), rgba(15,23,42,0.95));
+
+  background:
+    radial-gradient(circle at top, rgba(15,23,42,0.2), rgba(15,23,42,0.85)),
+    linear-gradient(to bottom, rgba(15,23,42,0.8), rgba(15,23,42,0.95));
 }
 
 .hero-content {
@@ -111,9 +118,9 @@ nav {
 
 .hero-subtitle {
   font-size: 1.05rem;
-  color: #e5e7eb;
   max-width: 640px;
   margin: 0.5rem auto 1.4rem;
+  color: #e5e7eb;
 }
 
 .hero-cta {
@@ -130,18 +137,18 @@ nav {
   align-items: center;
   justify-content: center;
   padding: 0.55rem 1.2rem;
+
   border-radius: 999px;
   border: 1px solid #38bdf8;
+
   font-size: 0.9rem;
   cursor: pointer;
-  text-decoration: none;
   white-space: nowrap;
 }
 
 .btn-primary {
   background: #38bdf8;
   color: #020617;
-  border-color: #38bdf8;
 }
 
 .btn-primary:hover {
@@ -158,7 +165,9 @@ nav {
   background: rgba(15,23,42,0.8);
 }
 
-/* LAYOUT */
+/* -------------------------------------------------
+   LAYOUT
+------------------------------------------------- */
 main {
   max-width: 1000px;
   margin: 0 auto;
@@ -172,79 +181,146 @@ section {
 h2 {
   font-size: 1.4rem;
   margin-bottom: 0.8rem;
+
   border-bottom: 1px solid #1f2937;
   padding-bottom: 0.3rem;
 }
 
-p.lead {
-  max-width: 650px;
-  font-size: 0.98rem;
-  color: #cbd5f5;
+/* -------------------------------------------------
+   TIMELINE LAYOUT (with dates + dots)
+------------------------------------------------- */
+.timeline {
+  position: relative;
+  margin-top: 1.5rem;
 }
 
-.grid {
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+
+  left: 80px;      /* align with dots */
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+  background: #1f2937;
+}
+
+/* One project entry */
+.timeline-item {
   display: grid;
-  gap: 1.5rem;
+  grid-template-columns: 120px minmax(0, 1fr);
+  column-gap: 1.2rem;
+  margin-bottom: 2rem;
 }
 
-@media (min-width: 768px) {
-  .grid-2 {
-    grid-template-columns: 1.3fr 1fr;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-  }
+/* Column containing date + dot */
+.timeline-col {
+  position: relative;
 }
 
-/* CARDS */
-.card {
+/* Date */
+.timeline-date {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  
+  width: 70px;               /* space for the text on the left */
+  text-align: right;
+  
+  font-size: 0.8rem;
+  opacity: 0.75;
+  padding-right: 8px;        /* small spacing before the dot */
+}
+
+
+/* Dot */
+.timeline-dot {
+  position: absolute;
+  top: 50%;
+  left: 80px;
+  transform: translate(-50%, -50%);
+
+  width: 14px;
+  height: 14px;
+  background: #38bdf8;
+  border-radius: 999px;
+  border: 2px solid #0f172a;
+}
+
+/* -------------------------------------------------
+   PROJECT CARD
+------------------------------------------------- */
+.timeline-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+
+  padding: 1rem;
   border-radius: 0.9rem;
   border: 1px solid #1f2937;
-  padding: 1.2rem 1.3rem;
-  background: radial-gradient(circle at top left, rgba(56,189,248,0.08), rgba(15,23,42,0.95));
-  margin-bottom: 1rem;
+
+  background: radial-gradient(circle at top left,
+              rgba(56,189,248,0.08),
+              rgba(15,23,42,0.95));
 }
 
-.card h3 {
-  margin-bottom: 0.4rem;
+/* Image */
+.project-image img {
+  /*width: 150px;*/
+  aspect-ratio: 4 / 3;
+  height: 150px;
+  object-fit: cover;
+
+  border-radius: 0.6rem;
+  cursor: pointer;
+
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.project-image img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Text */
+.project-content h3 {
   font-size: 1.05rem;
+  margin-bottom: 0.2rem;
 }
 
-/* BADGES */
-.badge-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
+.project-meta {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.4rem;
 }
 
-.badge {
-  font-size: 0.75rem;
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-  background: #020617;
-  border: 1px solid #1f2937;
-  color: #e5e7eb;
+.project-desc {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
 }
 
-/* LISTS */
-ul {
-  list-style: disc;
-  margin-left: 1.2rem;
-  margin-top: 0.4rem;
-  font-size: 0.95rem;
+.project-readmore {
+  font-size: 0.85rem;
+  opacity: 0.85;
 }
 
-/* CONTACT */
+/* -------------------------------------------------
+   CONTACT
+------------------------------------------------- */
 .contact-links p {
   margin-top: 0.3rem;
 }
 
-/* FOOTER */
+/* -------------------------------------------------
+   FOOTER
+------------------------------------------------- */
 footer {
   border-top: 1px solid #1f2937;
   padding: 1.2rem 1.5rem 1.5rem;
+
   text-align: center;
   font-size: 0.8rem;
   color: #9ca3af;
@@ -252,4 +328,29 @@ footer {
 
 footer a {
   color: #9ca3af;
+}
+
+/* -------------------------------------------------
+   RESPONSIVE BEHAVIOR
+------------------------------------------------- */
+@media (max-width: 700px) {
+
+  .timeline-item {
+    grid-template-columns: 100px minmax(0, 1fr);
+  }
+
+  .timeline-card {
+    flex-direction: column;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
 }
