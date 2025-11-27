@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project - MotoGP Holeshot Device</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="nav-wrap">
+    <nav>
+      <div class="nav-left">MSc Automotive Engineering</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+      </div>
+    </nav>
+  </div>
+  <div class="nav-spacer"></div>
+
+  <!-- HERO -->
+  <header class="hero" style="background-image: url('images/holeshot_front_2.jpg');">
+    <div class="hero-content">
+      <h1>MotoGP Holeshot Device</h1>
+      <p class="hero-subtitle">
+        Academic Project · Automotive Fluid Power Systems
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main>
+    <section class="project-body">
+      <h2>Modeling and Simulation of a MotoGP Holeshot Device Hydraulic System</h2>
+
+      <div class="project-columns">
+
+        <!-- LEFT COLUMN – ALL TEXT -->
+        <div class="project-text">
+          
+          <h3>Problem</h3>
+          <p>
+            MotoGP teams rely on holeshot devices to temporarily lower the chassis during acceleration and braking, 
+            reducing wheelie tendency and improving stability. For this project, the challenge was to model the 
+            full front and rear hydraulic holeshot system without access to any official technical data.
+          </p>
+          <p>
+            This meant reconstructing geometry, estimating loads, and simulating the most demanding maneuvers a 
+            MotoGP bike faces: a straight-line launch followed by heavy braking, where load transfer on each wheel 
+            can nearly double.
+          </p>
+
+          <h3>Approach</h3>
+          <p>
+            Since the available data was confidential, we gathered information from public sources such as forums, 
+            journalist interviews, and high-resolution photos, scaling the bike’s geometry directly from images.
+          </p>
+          <p>
+            With these inputs, I built a custom multibody model in MATLAB to reproduce the dynamic behavior during 
+            the lowering and release phases. The rear suspension required a complete progressive shock model using 
+            measurements from a Ducati MotoGP starting setup, while the front could be simplified thanks to its 
+            fork-rod geometry.
+          </p>
+          <p>
+            The simulation was fully interactive, allowing us to inspect joint positions, rod stroke, and forces on 
+            each component. Once the dynamic loads were known, we moved to the hydraulic design on OpenModelica, 
+            defining pump, lines, actuators, reservoir, and valve behavior under the worst-case conditions.
+          </p>
+
+          <h3>Solution</h3>
+          <p>
+            The final outcome was a complete and reliable holeshot hydraulic system model capable of predicting how 
+            the bike behaves during its most critical demands. The simulation provided accurate force and stroke 
+            requirements for each actuator, enabling correct dimensioning of the hydraulic circuit and ensuring the 
+            system could withstand loads far beyond typical race conditions.
+          </p>
+          <p>
+            This work demonstrated how, even with limited data, a combination of physics-based modeling, smart 
+            assumptions, and careful reconstruction can lead to a robust engineering solution.
+          </p>
+
+        </div>
+
+        <!-- RIGHT COLUMN – ALL IMAGES -->
+        <div class="project-images">
+          <img src="images/holeshot_1.png" alt="Holeshot Problem">
+          <img src="images/holeshot_2.gif" alt="Holeshot Approach">
+          <img src="images/holeshot_3.png" alt="Holeshot Solution">
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Nicolas Romanella · Built with plain HTML &amp; CSS
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('.project-images img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImg.src = "";
+  });
+</script>
+
+</body>
+</html>

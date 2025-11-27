@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project - Whole Motorcycle Dynamic Model</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="nav-wrap">
+    <nav>
+      <div class="nav-left">MSc Automotive Engineering</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+      </div>
+    </nav>
+  </div>
+  <div class="nav-spacer"></div>
+
+  <!-- HERO -->
+  <header class="hero" style="background-image: url('images/vigrade_front_2.jpg');">
+    <div class="hero-content">
+      <h1>Whole Motorcycle Dynamic Model</h1>
+      <p class="hero-subtitle">
+        Vehicle Dynamics Engineer · Simulation &amp; Modeling
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main>
+    <section class="project-body">
+      <h2>Motorcycle VI-Grade Model – Building and Validation Through Track Testing</h2>
+
+      <div class="project-columns">
+
+        <!-- LEFT COLUMN – TEXT -->
+        <div class="project-text">
+
+          <h3>Problem</h3>
+          <p>
+            At the start of the MotoStudent cycle, our division inherited a VI-Grade motorcycle model developed
+            by the previous team. The issue was that none of the original members remained, and the model lacked
+            documentation, parameter justification, and validation data.
+          </p>
+          <p>
+            To use it effectively for performance prediction and setup decisions, we had to re-verify every parameter
+            and bring the model to a handling and performance level consistent with real track behavior. This required
+            rebuilding trust in the model, understanding its structure, and comparing our simulations with reference
+            results from the previous MotoStudent edition.
+          </p>
+
+          <h3>Approach</h3>
+          <p>
+            Together with a colleague, I began by recalculating mass and inertia properties directly from the CAD for each
+            sub-assembly of the motorcycle, introducing small variations to understand model sensitivity.
+          </p>
+          <p>
+            During this phase, we learned and worked with three VI-Grade environments: VI-BikeRealTime to build
+            and tune the model, VI-Road to create the testing track, and VI-EventBuilder to program
+            base dynamic tests such as straight-line acceleration, braking, and slalom.
+          </p>
+          <p>
+            The process took five to six months of continuous iteration, during which we focused on core dynamic behavior
+            while temporarily accepting inherited models for tires and track profiles due to the enormous data volume and the
+            fact that only two members were available.
+          </p>
+          <p>
+            Once the bike went on track for real testing, I took charge of downloading telemetry, processing it, and comparing it with
+            VI-Grade output to evaluate the model’s accuracy and consistency with real performance.
+          </p>
+
+          <h3>Solution</h3>
+          <p>
+            The validated model showed a significant improvement compared to the version we initially inherited.
+            Simulation lap times approached real measurements, and the gap continued to shrink as more team members
+            joined and I transitioned into the role of Head of Simulation &amp; Modeling inside the Vehicle Dynamics division.
+          </p>
+          <p>
+            The refined model became a reliable tool for setup decisions, performance estimation, and early-stage development,
+            helping the team understand the bike’s behavior before physical testing and accelerating the overall design cycle.
+          </p>
+
+        </div>
+
+        <!-- RIGHT COLUMN – IMAGES -->
+        <div class="project-images">
+          <img src="images/vigrade_1.png" alt="VI-Grade - Problem">
+          <img src="images/vigrade_2.png" alt="VI-Grade - Approach">
+          <img src="images/vigrade_3.png" alt="VI-Grade - Solution">
+		  <img src="images/vigrade_4.png" alt="VI-Grade - Solution">
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Nicolas Romanella · Built with plain HTML &amp; CSS
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.project-images img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = "";
+    });
+  </script>
+
+</body>
+</html>

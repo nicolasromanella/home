@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project - Motorcycle Steering Damper System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="nav-wrap">
+    <nav>
+      <div class="nav-left">MSc Automotive Engineering</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+      </div>
+    </nav>
+  </div>
+  <div class="nav-spacer"></div>
+
+  <!-- HERO -->
+  <header class="hero" style="background-image: url('images/damper_front_2.png');">
+    <div class="hero-content">
+      <h1>Motorcycle Steering Damper System</h1>
+      <p class="hero-subtitle">
+        Vehicle Dynamics Engineer · Simulation &amp; Modeling
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main>
+    <section class="project-body">
+      <h2>Motorcycle Steering Damper System – Modeling, Simulation and Integration</h2>
+
+      <div class="project-columns">
+
+        <!-- LEFT COLUMN – TEXT -->
+        <div class="project-text">
+          <h3>Problem</h3>
+          <p>
+            During the MotoStudent project we had to integrate a steering damper into our motorcycle, but the unit we had
+            available was larger than ideal and created significant geometric constraints with the front fork and steering plate.
+          </p>
+          <p>
+            A smaller, easier-to-mount damper would have solved the issue, but the Marketing Division’s budget restrictions made purchasing
+            a new one impossible. The challenge was therefore to design a mounting system that could accommodate the oversized damper,
+            remain compliant with MotoStudent regulations, and still guarantee the correct steering-stability performance.
+          </p>
+
+          <h3>Approach</h3>
+          <p>
+            The Dynamics Division defined a feasible mounting concept: a dual-support system connecting the damper to the bike frame and the left fork.
+            A teammate created a first CAD proposal in Siemens NX based on the entire front-end assembly, giving us the initial geometry and constraints.
+          </p>
+          <p>
+            Starting from this, I worked with another colleague to export the system into MSC Adams, building the multibody model using the mass properties
+            estimated from the CAD. At the same time, the Structures Division iterated on support stiffness, topology, and stress reliability,
+            while we updated the dynamic model to reflect each new geometry.
+          </p>
+          <p>
+            I coordinated this loop, and also led the physical testing of the damper in the workshop to measure its velocity–damping characteristics.
+            These data fed into our Adams simulations, where we evaluated the steering response across different frequency inputs to ensure that
+            oscillations decayed within the required time.
+          </p>
+
+          <h3>Solution</h3>
+          <p>
+            The final system successfully integrated the oversized damper without violating geometric or regulatory constraints.
+            The dynamic model in Adams confirmed that the solution provided sufficient damping for steering stability,
+            and guided the structural redesign until the supports met both performance and strength requirements.
+          </p>
+          <p>
+            The component was manufactured without mounting issues and performed reliably on the motorcycle,
+            validating our combined simulation, testing, and co-design approach.
+          </p>
+        </div>
+
+        <!-- RIGHT COLUMN – IMAGES -->
+        <div class="project-images">
+          <img src="images/damper_1.png" alt="Damper - Problem">
+          <img src="images/damper_2.png" alt="Damper - Approach">
+          <img src="images/damper_3.png" alt="Damper - Solution">
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Nicolas Romanella · Built with plain HTML &amp; CSS
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.project-images img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = "";
+    });
+  </script>
+
+</body>
+</html>

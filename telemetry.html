@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project - Track, Suspension and Handling</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="nav-wrap">
+    <nav>
+      <div class="nav-left">MSc Automotive Engineering</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+      </div>
+    </nav>
+  </div>
+  <div class="nav-spacer"></div>
+
+  <!-- HERO (same height as index) -->
+  <header class="hero" style="background-image: url('images/telemetry_front_2.jpg');">
+    <div class="hero-content">
+      <h1>Track, Suspension and Handling</h1>
+      <p class="hero-subtitle">
+        Vehicle Dynamics Engineer · Head of Simulation &amp; Modeling
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main>
+    <section class="project-body">
+      <h2>Motorcycle Telemetry Analysis for Track, Suspension and Handling Modeling</h2>
+
+      <div class="project-columns">
+
+        <!-- LEFT COLUMN – TEXT -->
+        <div class="project-text">
+          <h3>Problem</h3>
+          <p>
+            When the new season began, our team grew and we incorporated the Simulink model from the Electronics Division.
+            This brought electric, thermal, motor, and battery-management effects into the VI-Grade simulation environment.
+            The model became more realistic but also slower, because the added physical constraints slightly reduced the virtual bike’s performance.
+          </p>
+          <p>
+            To recover accuracy, the Vehicle Dynamics division needed to rebuild and refine the suspension, tire, and track models,
+            all of which had been only partially validated the previous year.
+            This required a systematic approach to telemetry analysis, road-profile reconstruction, and dynamic behavior tuning.
+          </p>
+
+          <h3>Approach</h3>
+          <p>
+            With a larger team of five new members, I took the lead in reorganizing the workflow. I began by training everyone on VI-Grade
+            and guiding part of the group through re-checking suspensions using datasheets and basic dynamic tests
+            (acceleration, braking, slalom).
+          </p>
+          <p>
+            Meanwhile, I focused on completely redefining the tire model: the previous version had an overly polygonal force–slip shape,
+            so I replaced it with a smoother, physically coherent base model adapted specifically to our motorcycle.
+          </p>
+          <p>
+            The most demanding task was rebuilding the tracks. I developed a complete MATLAB pipeline to convert GPS telemetry into usable
+            VI-Road profiles, filtering noise through Fourier analysis and moving-mean techniques while preserving the real geometry.
+            Once the tools were ready, the team validated the new models against the previous year's test data and iteratively improved the
+            correlation between real laps and simulation.
+          </p>
+
+          <h3>Solution</h3>
+          <p>
+            The refined suspension, tire, and track models produced a simulation that was sometimes up to one second faster than the real bike –
+            a huge margin in motorsport. This allowed us to retune the VI-Grade virtual rider controller to match the real rider’s style
+            and to support setup decisions before going on track.
+          </p>
+          <p>
+            Using the improved model, we could evaluate transmission ratios, fork position and angle, rear-rod length, expected tire wear,
+            and general handling predictions before testing on track.
+            The updated simulation became one of the pillars of the team’s vehicle-dynamics workflow and directly contributed
+            to faster optimisation cycles.
+          </p>
+        </div>
+
+        <!-- RIGHT COLUMN – IMAGES -->
+        <div class="project-images">
+          <img src="images/telemetry_1.png" alt="Telemetry - Problem">
+          <img src="images/telemetry_2.png" alt="Telemetry - Approach">
+          <img src="images/telemetry_3.png" alt="Telemetry - Solution">
+		  <img src="images/telemetry_4.png" alt="Telemetry - Solution">
+		  <!-- <img src="images/telemetry_5.png" alt="Telemetry - Solution"> -->
+        </div>
+
+      </div>
+
+      <!-- INSIGHT (FULL-WIDTH) -->
+      <div class="project-insight">
+        <h3>Insight 💡</h3>
+        <p>
+          My guiding principle was that a simulation doesn’t need to perfectly mirror reality – it needs to match or outperform real behavior
+          to become a useful predictive tool. Since every model is a simplification, small deviations from real-world parameters were acceptable
+          if they improved performance fidelity. This mindset helped the team be more pragmatic, more results-oriented,
+          and more confident in using the simulation as a decision-making instrument.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Nicolas Romanella · Built with plain HTML &amp; CSS
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.project-images img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = "";
+    });
+  </script>
+
+</body>
+</html>
