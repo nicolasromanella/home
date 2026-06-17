@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project - Real-Time Flexible Car Body Simulation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="nav-wrap">
+    <nav>
+      <div class="nav-left">MSc Automotive Engineering</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+      </div>
+    </nav>
+  </div>
+  <div class="nav-spacer"></div>
+
+  <!-- HERO -->
+  <header class="hero" style="background-image: url('../images/volvocars_front_2.png');">
+    <div class="hero-content">
+      <h1>Real-Time Flexible Car Body Simulation</h1>
+      <p class="hero-subtitle">
+        Vehicle Dynamics · FEM Reduction · Multibody Simulation
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main>
+    <section class="project-body">
+      <h2>Reduced Flexible Body-in-White Models for Driving Simulator Applications</h2>
+
+      <div class="project-columns">
+
+        <!-- LEFT COLUMN – TEXT -->
+        <div class="project-text">
+          <h3>Problem</h3>
+          <p>
+            Real-time driving simulators can benefit from flexible structural components, because they allow the vehicle model to represent part of the body deformation that is normally neglected in rigid-body simulations.
+            However, detailed finite element car-body models are computationally expensive and cannot be used directly in a real-time vehicle dynamics environment.
+          </p>
+          <p>
+            The challenge was to reduce a high-fidelity body-in-white model while preserving the structural behavior that matters for handling, steering response, interface loads, and simulator performance.
+            The model also had to remain compatible with the multibody simulation workflow used for vehicle-level assessments.
+          </p>
+
+          <h3>Approach</h3>
+          <p>
+            I generated an Adams-compatible flexible-body representation from a finite element body-in-white model using component mode synthesis and Modal Neutral File export.
+            The initial model was then refined through interface-node optimization to reduce the number of connection points and improve real-time feasibility.
+          </p>
+          <p>
+            Two reduction strategies were developed and compared.
+            The first one used vehicle-level simulations to rank modes according to strain energy, kinetic energy, and modal participation during selected driving events.
+            The second one used a state-space-based Modal Dominancy method to rank modes from the component-level input-output response without requiring time-domain vehicle simulations.
+          </p>
+          <p>
+            The reduced models were validated against a full flexible reference model using vehicle-dynamics signals, transfer functions, reconstructed interface-node displacements, real-time solver performance, and subjective driver feedback from simulator evaluations.
+          </p>
+
+          <h3>Solution</h3>
+          <p>
+            The final workflow made it possible to create reduced finite element car-body models suitable for real-time driving simulator applications.
+            The results showed that body-in-white flexibility alone had a limited effect on the selected low-frequency steering-response quantities, while local structural accuracy remained strongly dependent on the retained modal content.
+          </p>
+          <p>
+            The project highlighted that real-time flexible-body modeling is not only a matter of removing modes.
+            Interface definition, modal selection, validation metrics, and computational cost must be treated together to obtain a model that is both physically meaningful and usable in a simulator environment.
+          </p>
+        </div>
+
+        <!-- RIGHT COLUMN – IMAGES -->
+        <div class="project-images">
+          <img src="../images/volvocars_1.png" alt="Flexible body-in-white model">
+          <img src="../images/volvocars_2.png" alt="Modal reduction workflow">
+          <img src="../images/volvocars_3.png" alt="Driving simulator validation">
+          <img src="../images/volvocars_4.png" alt="Real-time simulation results">
+        </div>
+
+      </div>
+
+      <!-- INSIGHT -->
+      <div class="project-insight">
+        <h3>Insight 💡</h3>
+        <p>
+          The key lesson was that model reduction is not just about making a model lighter.
+          A reduced model is useful only if it preserves the right behavior for the intended application.
+          In this case, the goal was to find the best compromise between structural fidelity, vehicle-dynamics relevance, and real-time computational efficiency.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Nicolas Romanella · Built with plain HTML &amp; CSS
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.project-images img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = "";
+    });
+  </script>
+
+</body>
+</html>
