@@ -452,3 +452,27 @@ footer a {
 .about-content {
   text-align: justify;
 }
+
+/* -----------------------------------------
+   SECTION HEADING
+------------------------------------------ */
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #1f2937;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.section-heading h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.section-heading span {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
