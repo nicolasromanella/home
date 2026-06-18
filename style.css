@@ -458,9 +458,11 @@ footer a {
 ------------------------------------------ */
 
 .section-heading {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: baseline;
+  gap: 1rem;
+
   border-bottom: 1px solid #1f2937;
   padding-bottom: 0.3rem;
   margin-bottom: 0.8rem;
@@ -475,4 +477,5 @@ footer a {
 .section-heading span {
   font-size: 0.95rem;
   color: #9ca3af;
+  white-space: nowrap;
 }
